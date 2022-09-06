@@ -4,10 +4,8 @@ def days_filter (buy_day, buy_price, max_profit, residual_prices, buy_sell)
 
   return [max_profit, buy_sell] if profit < max_profit
 
-  max_profit = profit
   sell_day = residual_prices.find_index(max_price_to_sell) + buy_day + 1
-  buy_sell = [buy_day, sell_day]
-  [max_profit, buy_sell]
+  [profit, [buy_day, sell_day]]
 end
 
 def stock_picker(prices)
@@ -19,9 +17,7 @@ def stock_picker(prices)
 
     break if residual_prices.empty?
 
-    analysis = days_filter(buy_day, buy_price, max_profit, residual_prices, buy_sell)
-    max_profit = analysis[0]
-    buy_sell = analysis[1]
+    max_profit, buy_sell = days_filter(buy_day, buy_price, max_profit, residual_prices, buy_sell)
   end
 
   buy_sell
