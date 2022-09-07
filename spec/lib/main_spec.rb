@@ -5,11 +5,11 @@ describe 'lib/main' do
     let(:prices) { [17, 3, 6, 9, 15, 8, 6, 1, 10] }
 
     it 'returns an array of size 2' do
-      stock_picker(prices).size.should == 2
+      expect(stock_picker(prices).size).to be(2)
     end
 
     it 'returns the day at position 1 (buy) and position 4 (sell)' do
-      stock_picker(prices).should == [1, 4]
+      expect(stock_picker(prices)).to eql([1, 4])
     end
   end
 
@@ -21,11 +21,11 @@ describe 'lib/main' do
     let(:buy_sell) { [] }
 
     it 'returns an array of size 2' do
-      days_filter(buy_day, buy_price, max_profit, residual_prices, buy_sell).size.should == 2
+      expect(days_filter(buy_day, buy_price, max_profit, residual_prices, buy_sell).size).to be(2)
     end
 
     it 'returns [profit, [day_sell, day_buy(relative to day_sell)]]' do
-      days_filter(buy_day, buy_price, max_profit, residual_prices, buy_sell).should == [12, [1, 3]]
+      expect(days_filter(buy_day, buy_price, max_profit, residual_prices, buy_sell)).to eql([12, [1, 4]])
     end
   end
 end
