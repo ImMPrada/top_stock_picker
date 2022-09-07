@@ -3,7 +3,7 @@
 
 ## Stock picker
 
-A challenge on [Odin's project](https://www.theodinproject.com/lessons/ruby-stock-picker)
+A challenge on [Odin project](https://www.theodinproject.com/lessons/ruby-stock-picker)
 
 Implement a method #stock_picker that takes in an array of stock prices, one for each hypothetical day. It should return a pair of days representing the best day to buy and the best day to sell. Days start at 0.
 
